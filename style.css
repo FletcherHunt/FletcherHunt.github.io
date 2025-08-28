@@ -25,13 +25,13 @@ img {
 
 /* ---------- 2) Core Theme Tokens ----------- */
 :root {
-  --brand: #1c4c96;        /* primary colour */
+  --brand: #05371e;        /* primary colour */
   --brand-2: #f39c12;      /* accent colour */
-  --bg: #ffffff;           /* page background */
-  --head: #0FDE4B;         /* main header colour */
+  --bg: #d4cdc1;           /* page background */
+  --head: #ffffff;         /* main header colour */
   --text: #222222;         /* default text */
   --muted: #666666;        /* secondary text */
-  --surface: #f6f8fb;      /* card/section bg */
+  --surface: #ffffff;      /* card/section bg */
   --radius: 12px;          /* rounded corners */
   --shadow: 0 4px 12px rgba(0,0,0,0.08);    /* Subtle shadow for depth */
   --spacing: 16px;         /* base spacing unit */
@@ -83,9 +83,9 @@ a:hover, a:focus {
 
 /* ---------- 6) Header / Nav ---------------- */
 header {
-  background: linear-gradient(0deg, #0f3460, #1c4c96);  /* Gradient background */
+  background: linear-gradient(0deg, #05371e, #05371e);  /* Gradient background */
   color: white;                                           /* White text */
-  padding: 18px 0;                                          /* Vertical spacing */
+  padding: 1px 0;                                          /* Vertical spacing */
   box-shadow: var(--shadow);                                /* Subtle shadow for depth */
   margin-bottom: 0;                                         /* Removes gap under header */
 }
@@ -103,7 +103,7 @@ header h1 {
   color: var(--head);                                 /* Special header colour */
 }
 nav {
-  background: #333;             /* Dark grey background for nav bar */
+  background: #05371e;             /* Dark grey background for nav bar */
   font-size: 0.95rem;             /* Slightly smaller font in navigation */
   width: 100%;                    /* Spans full width */
   margin: 32px auto;              /* Space above page content; no top gap */
@@ -195,7 +195,7 @@ th, td {
   text-align: left;           /* Aligns text to the left */
 }
 thead {
-  background-color: #f0f0f0; /* Light grey header background */
+  background-color: #f0f0f0ef; /* Light grey header background */
 }
 th {
   color: #333;              /* Dark grey header text */
