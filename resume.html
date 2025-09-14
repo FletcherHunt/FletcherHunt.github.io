@@ -1,51 +1,67 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=!, initial-scale=1.0">
-    <title>resume</title>
+    <!-- Ensure proper scaling on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-         <h1>Resume</h1>
-    </header>
+    <!-- Page title -->
+    <h1>Resume</h1>
+</header>
 
-<nav><!--- this is where all my links to other pages are-->
-
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="aboutme.html">About Me</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="teachingstyle.html">Teaching Style</a></li>
-<li><a href="contactme.html">Contact Me</a></li>
-<li><a href="resume.html">Resume</a></li>
-<li><a href="resources.html">Resources</a></li>
-</ul>
+<!-- Main site navigation -->
+<nav>
+    <!-- Navigation menu linking to all site pages -->
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="teachingstyle.html">Teaching Style</a></li>
+        <li><a href="contactme.html">Contact Me</a></li>
+        <li><a href="resume.html" aria-current="page">Resume</a></li>
+        <li><a href="resources.html">Resources</a></li>
+    </ul>
 </nav>
 
 <main>
-    
-  
+    <!-- Resume download section -->
     <section class="section">
         <h2>Download Resume</h2>
-        <p>This document outlines my professional/teaching experience to date</p>
-        <figure>
-      <a href="docs/resume1.pdf" download="Resume.pdf" type="application/pdf" aria-label="Download Resume PDF" > <img src="images/resumess.png" alt="Resume Thumbnail PNG" width="300" loading="lazy"></a>
-      
-      <figcaption>Download <strong>Resume</strong> (PDF)</figcaption>
-      </figure>
-    </section>
-    
+        <p>This document outlines my professional and teaching experience to date.</p>
 
+        <!-- Figure element for visual thumbnail and caption -->
+        <figure>
+            <!-- Link to downloadable PDF version of resume -->
+            <a href="docs/resume1.pdf" 
+               download="Resume.pdf" 
+               type="application/pdf" 
+               aria-label="Download Resume PDF">
+                <!-- Thumbnail image preview of the resume -->
+                <img src="images/resumess.png" 
+                     alt="Thumbnail preview of Fletcher Hunt's resume" 
+                     width="300" 
+                     loading="lazy">
+            </a>
+
+            <!-- Caption describing the content -->
+            <figcaption>
+                Download <strong>Resume</strong> (PDF)
+            </figcaption>
+        </figure>
+    </section>
 </main>
+
+<!-- Footer with copyright -->
 <footer>
     <div class="container">
-        <p>2025 Fletcher Hunt. All rights reserved.</p>
+        <p>&copy; 2025 Fletcher Hunt. All rights reserved.</p>
     </div>
 </footer>
 
 </body>
-
 </html>
