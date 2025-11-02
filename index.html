@@ -16,7 +16,17 @@
 
 		<!-- Wrapper -->
 			<div id="wrapper">
+<!-- Popup -->
+<div id="welcome-popup" class="popup">
+  <div class="popup-content">
+    <h3>Welcome!</h3>
+    <p>Thanks for visiting my teaching portfolio — enjoy exploring the site! if there any issues with the site please use the Contact Me Form or refer to the user documentation for information on navigationa nd assistance</p>
+    <button id="close-popup">Close</button>
+  </div>
+</div>
 
+<!-- Button example (optional) -->
+<button id="open-popup" class="button">Show Message</button>
 				<!-- Header -->
 					<header id="header">
 						<div class="logo">
@@ -26,6 +36,15 @@
 							<div class="inner">
 								<h1>Mr Hunt's Teaching Portfolio</h1>
 								<p>A Brief Overview of Mr Hunts Teachning Experience, philosophy and how to contact for commssioned work and enquiries</p>
+								<!-- Graduation Countdown -->
+<div id="grad-countdown" class="countdown" aria-live="polite">
+  <div class="countdown__big">
+    <span id="grad-days">—</span> days
+  </div>
+  <div class="countdown__label">until graduation (1 Nov 2026)</div>
+</div>
+
+
 							</div>
 						</div>
 						<nav>
@@ -119,7 +138,7 @@
 						<!-- Contact the fields must be filled in to submit a contact me form --> 
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
+								<form method="post" action="https://formspree.io/f/xyzblelg">
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
@@ -141,9 +160,10 @@
 								</form>
 								<ul class="icons">
 									
-									<li><a href="(3) Facebook.html" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="(1) Instagram.html" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="Mr Hunt Teaching Portfolio.html" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.facebook.com/fletcher.hunt.931737" class="icon brands fa-facebook-f" target="_blank" rel="noopener noreferrer"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com/fletcher_hunt1/" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+									<li><a href="FletcherHunt.github.io" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+
 								</ul>
 							</article>
 
@@ -181,10 +201,20 @@
 							<!-- Resume -->
 							<article id="Resume">
 								<h2 class="major">Resume</h2>
-								<span class="image main"><img src="images/images/resumess.png" alt="Resume preview" /></span>
+								 <a href="docs/resume1.pdf" 
+               download="Resume.pdf" 
+               type="application/pdf" 
+               aria-label="Download Resume PDF">
+                <!-- Thumbnail image preview of the resume -->
+                <img src="images/images/resumess.png" 
+                     alt="Thumbnail preview of Fletcher Hunt's resume" 
+                     width="300" 
+                     loading="lazy">
+            </a>
 								<p>This document outlines my professional and teaching experience to date.</p>
 								<h3>Summary</h3>
 								<p>I’m a passionate preservice Design & Technology teacher currently completing my Bachelor of Education (Secondary) / Bachelor of Arts (Design Innovation & Technologies) at Australian Catholic University. With hands-on experience as a Joinery and Cabinetmaking Assistant and placements at Balmain Secondary School and St Mary’s Cathedral College, I bring strong practical skills, creativity, and workshop expertise into my teaching. My focus is on fostering engaging, industry-relevant learning experiences that inspire students to design, build, and problem-solve with confidence.</p>
+							
 							</article>
 
 						<!-- Elements -->
@@ -447,6 +477,74 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+(function () {
+  // Target date in LOCAL time (months are 0-indexed: 10 = November)
+  const target = new Date(2026, 10, 1); // 1 Nov 2026, 00:00 local
+
+  function update() {
+    const now = new Date();
+
+    // Strip time to midnight for whole-day math
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const msPerDay = 24 * 60 * 60 * 1000;
+    const days = Math.ceil((target - today) / msPerDay);
+
+    const daysEl = document.getElementById("grad-days");
+    const labelEl = document.querySelector("#grad-countdown .countdown__label");
+    const bigEl = document.querySelector("#grad-countdown .countdown__big");
+
+    if (!daysEl || !labelEl || !bigEl) return;
+
+    if (days <= 0) {
+      bigEl.textContent = "🎓 Graduated!";
+      labelEl.textContent = "Congratulations!";
+    } else {
+      daysEl.textContent = days.toLocaleString();
+    }
+  }
+
+  // Update now…
+  update();
+
+  // …and then once per day at local midnight (handles DST correctly)
+  function msUntilNextMidnight() {
+    const now = new Date();
+    const nextMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+    return nextMidnight - now;
+  }
+
+  setTimeout(function tickDaily() {
+    update();
+    setTimeout(tickDaily, 24 * 60 * 60 * 1000);
+  }, msUntilNextMidnight());
+})();
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.getElementById("welcome-popup");
+  const closeBtn = document.getElementById("close-popup");
+  const openBtn = document.getElementById("open-popup");
+
+  // Show popup on page load (after 1 second)
+  setTimeout(() => {
+    popup.style.display = "flex";
+  }, 5000);
+
+  // Close popup
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  // Optional: reopen popup via button
+  openBtn.addEventListener("click", () => {
+    popup.style.display = "flex";
+  });
+});
+</script>
 
 	</body>
 </html>
